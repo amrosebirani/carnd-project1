@@ -6,17 +6,6 @@ The goals / steps of this project are the following:
 * Make a pipeline that finds lane lines on the road
 * Reflect on my work in a written report
 
-
-[//]: # (Image References)
-
-[image1]: ./examples/grayscale.jpg "Grayscale"
-[image2]: ./examples/gaussian.jpg "Gaussian"
-[image3]: ./examples/canny.jpg "Canny"
-[image4]: ./examples/interest.jpg "Interest"
-[image5]: ./examples/hough.jpg "Hough"
-[image6]: ./examples/final.jpg "Final"
----
-
 ### Reflection
 
 ### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
@@ -25,27 +14,27 @@ My pipeline consisted of 6 steps.
 
 First, I converted the images to grayscale 
 
-![alt text][image1]
+![alt text](https://github.com/amrosebirani/carnd-project1/raw/master/examples/grayscale.jpg)
 
 After that I applied gaussian blur to the grayscaled image. I used a kernel of size 5.
 
-![alt text][image2]
+![alt text](https://github.com/amrosebirani/carnd-project1/raw/master/examples/gaussian.jpg)
 
 After that I applied canny edge detection with low threshold of 50 and high threshold of 150, this step detects a good set of edges, mostly picked this from the in course quiz.
 
-![alt text][image3]
+![alt text](https://github.com/amrosebirani/carnd-project1/raw/master/examples/canny.jpg)
 
 After this I applied the region of interest filter, to just have the edges detected for lane lines.
 
-![alt text][image4]
+![alt text](https://github.com/amrosebirani/carnd-project1/raw/master/examples/interest.jpg)
 
 After identifying the region of interest, I ran the hough line detection, using the lines detected I was able to draw the following lines. 
 
-![alt text][image5]
+![alt text](https://github.com/amrosebirani/carnd-project1/raw/master/examples/hough.jpg)
 
 Following the hough line detection step I created a weighted image with the above image and original image to create the final image as displayed below.
 
-![alt text][image6]
+![alt text](https://github.com/amrosebirani/carnd-project1/raw/master/examples/final.jpg)
 
 In order to draw a single line on the left and right lanes, I modified the draw_lines() function by the following steps
 
